@@ -1,0 +1,44 @@
+{
+  "name": "terminal-focus",
+  "displayName": "Terminal Focus",
+  "description": "Focus an integrated terminal from an external vscode:// URI (by shell PID).",
+  "version": "0.0.5",
+  "publisher": "mshakeg",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mshakeg/vscode-terminal-focus.git"
+  },
+  "homepage": "https://github.com/mshakeg/vscode-terminal-focus",
+  "bugs": {
+    "url": "https://github.com/mshakeg/vscode-terminal-focus/issues"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onUri"
+  ],
+  "contributes": {},
+  "scripts": {
+    "typecheck": "tsc -p ./ --noEmit",
+    "bundle": "esbuild src/extension.ts --bundle --external:vscode --platform=node --target=node18 --format=cjs --outfile=out/extension.js",
+    "compile": "npm run typecheck && npm run bundle",
+    "watch": "esbuild src/extension.ts --bundle --external:vscode --platform=node --target=node18 --format=cjs --outfile=out/extension.js --watch",
+    "package": "npm run compile && vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/proper-lockfile": "^4.1.4",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "proper-lockfile": "^4.1.2"
+  }
+}
