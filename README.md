@@ -2,7 +2,7 @@
 
 Tiny VS Code extension that lets external programs focus a specific integrated terminal by shell PID, even when the user is currently in a different VS Code window.
 
-Built as the companion to a [Claude Code notification hook](https://github.com/mshakeg/claude-dotfiles/blob/main/hooks/notify.sh): clicking a Claude Code desktop notification jumps directly to the terminal pane that fired it, rather than only the workspace window.
+Built as the companion to the shared notification-hook library [`mshakeg/notify-hook`](https://github.com/mshakeg/notify-hook), which drives both [Claude Code](https://github.com/mshakeg/claude-dotfiles) and Codex CLI dotfiles: clicking a desktop notification jumps directly to the terminal pane that fired it, rather than only the workspace window.
 
 ## How it works
 
